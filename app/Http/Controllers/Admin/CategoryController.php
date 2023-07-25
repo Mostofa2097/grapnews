@@ -42,10 +42,36 @@ class CategoryController extends Controller
         return redirect()->back();
      }
 
+     public function edit($id)  {
+        //$data = DB::table('categories')->where('id',$id)->first();
+        $data = Category::find($id);
+        return view('admin.category.edit',compact('data'));
+     }
+
+
+     function update(Request $request, $id){
+        $category = Category::find($id);
+        $category->update([
+            'category_name' => $request->category_name,
+            'category_slug' => Str::of($request->category_name)->slug('-'),
+        ]);
+        return redirect()->route('category.index');
+        
+     }
+
+     function destroy($id) {
+        //DB::table('categories')->where('id',$id)->delete();
+
+        // $category = Category::find($id);
+        // $category->delete();
+        Category::destroy($id);
+        return redirect()->back();
+     }
 
 
 
-     
+
+
 
 
 }
