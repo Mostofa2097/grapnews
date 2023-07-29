@@ -8,10 +8,6 @@
                 <div class="card-header">{{ __('Add new Category') }}</div>
 
                 <div class="card-body">
-                    <a href="{{route('category.index')}}" class="btn btn-info">All Catagories</a>
-                    <br><br>
-
-
                     <form method="post" action="{{route('category.update',$data->id)}}">
                         @csrf
                         <div class="form-group">
@@ -26,8 +22,6 @@
                                     </span>
                                 @enderror
                         </div>
-                        <br>
-
                         <button type="submit" class="btn btn-primary">update</button>
                       </form>
                    
