@@ -55,6 +55,29 @@
                 </a>
               </li>
             </ul>
+           </li>
+
+
+           
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>SubCategories</p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('subcategory.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>add subcategory</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('subcategory.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All subcategory</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
           
