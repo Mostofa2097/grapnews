@@ -11,5 +11,10 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
+    function create()
+    {
+
+       return view('admin.post.create');
+    }
     
 }

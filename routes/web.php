@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\SubcategoryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -38,5 +39,7 @@ Route::get('subcategory/delete/{id}', [SubcategoryController::class, 'destroy'])
 Route::get('subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->name('subcategory.edit');
 Route::post('subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('subcategory.update');
 
+//__post__//
 
+Route::get('post/create', [PostController::class, 'create'])->name('post.create');
 
