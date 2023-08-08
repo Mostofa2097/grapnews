@@ -14,24 +14,23 @@ class Post extends Model
     use HasFactory;
     protected $fillable = [
         'category_id', 'subcategory_id', 'title', 'slug', 'post_date', 'description', 'image',
-    ];
-
-
-    //__join with category__//
-    function category()
-    {
-        return $this->belongsTo(Category::class, 'category_id');
+      ];
+      
+      //__join with category__//
+      function category(){
+        return $this->belongsTo(Category::class,'category_id');
     }
+    
 
       //__join with subcategory__//
-      function subcategory()
+      public function subcategory()
       {
-          return $this->belongsTo(Subcategory::class, 'subcategory_id');
+          return $this->belongsTo(Subcategory::class,'subcategory_id');
       }
 
         //__join with user__//
-    function user()
+    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class,'user_id');
     }
 }

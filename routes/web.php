@@ -40,6 +40,7 @@ Route::get('subcategory/edit/{id}', [SubcategoryController::class, 'edit'])->nam
 Route::post('subcategory/update/{id}', [SubcategoryController::class, 'update'])->name('subcategory.update');
 
 //__post__//
+Route::get('post/index', [PostController::class, 'index'])->name('post.index');
 
 Route::get('post/create', [PostController::class, 'create'])->name('post.create');
 

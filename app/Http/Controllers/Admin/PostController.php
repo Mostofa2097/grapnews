@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Subcategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,6 +19,19 @@ class PostController extends Controller
         $category = Category::all();
 
        return view('admin.post.create',compact('category'));
+    }
+
+    function index(){
+        //$posts = Post::all();
+
+        $posts = DB::table('posts')
+        ->leftJoin('categories','posts.category_id','categories.id')
+        ->leftJoin('subcategories','posts.subcategory_id','subcategories.id')
+        ->leftJoin('users','posts.user_id','users.id')
+        ->select('posts.*','categories.category_name','subcategories.subcategory_name','users.name')
+        ->get();
+
+        return view('admin.post.index',compact('posts'));
     }
 
 
